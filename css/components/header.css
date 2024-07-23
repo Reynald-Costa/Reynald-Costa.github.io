@@ -118,5 +118,9 @@ header .header__right .header__image .background {
     margin: 2rem auto 4rem;
   }
 
+  header .header__right .header__image img{
+    width: 15rem;
+    height: auto;
+  }
   
 }
