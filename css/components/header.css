@@ -1,0 +1,122 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  scroll-margin-top: 20rem;
+}
+
+
+header .header__left {
+  max-width: 62rem;
+  flex: 1;
+}
+
+header .header__left h3{
+  color: white;
+}
+
+
+header h1{
+  color: white;
+}
+
+header .header__left span{
+  position: relative;
+  display: inline-block;
+}
+
+header .header__left span::before{
+  content: "";
+  color: rgb(62, 62, 203);
+  animation: palavras 20s infinite;
+}
+
+header .header__left span::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  border-left: 2px solid rgb(62, 62, 203);
+  right: -10px;
+  animation: cursor .8s infinite, digita 20s steps(80) infinite;
+  width: calc(100% + 15px);
+  background-color: black;
+}
+
+@keyframes digita {
+  10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+    width: 0;
+  }
+  5%, 20%, 25%, 40%, 60%, 65%, 80%, 85%{
+    width: calc(100% + 15px);
+  }
+}
+
+
+@keyframes cursor{
+  0%{
+    border-left: 2px solid white;
+  }
+}
+
+@keyframes palavras {
+  0%,100%{
+    content: "Reynald !";
+  }
+
+}
+
+header .header__left p {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  max-width: 50rem;
+}
+
+header .header__right .header__image {
+  position: relative;
+  line-height: 0;
+}
+
+header .header__right .header__image img{
+  width: 30rem;
+  height: auto;
+}
+
+header .header__right .header__image::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--tertiary-color);
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  border-radius: 0.5rem;
+  z-index: -1;
+} 
+
+header .header__right .header__image .reynald {
+  border-radius: 0.5rem;
+  min-width: 20rem;
+  max-width: 100%;
+}
+
+header .header__right .header__image .background {
+  position: absolute;
+  top: -4rem;
+  right: -2.5rem;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  header .header__left p {
+    margin: 2rem auto 4rem;
+  }
+
+  
+}
